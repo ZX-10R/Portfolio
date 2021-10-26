@@ -1,2 +1,5 @@
-const heading = document.querySelector('h1');
-heading.textContent= "Javascript";
+window.onload = loadFunction()
+
+loadFunction{
+    window.print("javascript");
+}
