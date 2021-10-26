@@ -5,9 +5,9 @@
     <title>NopolarBearのサイト</title>
     <meta name="description" content="Portfolio">
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
 </head>
 <body>
     <h1>工事中</h1>
+    <script src="main.js"></script>
 </body>
 </html>
