@@ -1,2 +1,2 @@
 const heading = document.querySelector('h1');
-heading.textContent= "Javascript"
+heading.textContent= "Javascript";
