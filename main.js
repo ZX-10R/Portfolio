@@ -1,5 +1,5 @@
 window.onload = loadFunction()
 
-loadFunction{
+loadFunction(){
     window.print("javascript");
 }
