@@ -2,7 +2,6 @@ h1 {
     color:red;
 }
 
-.menu ul{
+.menu ul li{
     list-style-type:none;
-     
 }
