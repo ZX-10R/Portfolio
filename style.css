@@ -1,9 +1,39 @@
+body{
+    font-family:"Yu Gothic";
+    
+}
 h1 {
     color:red;
 }
-
-.menu ul li{
-    list-style-type:none;
+.header{
+    position:fixed;
+    background-color:aquamarine;
+}
+#title{
+    display:block;
+    float:left;
+}
+.menu {
     display:block;
     float:right;
+    height:90px;
+    width:50%;
+}
+
+.menu ul{
+    margin-top:10%;
+    margin-bottom:10%;
+    display:block;
+    float:left;
+}
+
+.menu_item{
+    font-size:120%;
+    list-style-type:none;
+    display:block;
+    float:left;
+    padding:10px;
+}
+.Greeting{
+    clear:both;
 }
