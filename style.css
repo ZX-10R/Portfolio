@@ -5,4 +5,5 @@ h1 {
 .menu ul li{
     list-style-type:none;
     display:block;
+    float:right;
 }
