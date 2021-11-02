@@ -11,7 +11,7 @@
         <h1 class="menubar">Menu</h1>
         <nav class="navigation">
             <ul class="menu">
-                <li class="menu_item"><a href="index.html">トップページ</a></li>
+                <li class="menu_item"><a href="../../index.html">トップページ</a></li>
                 <li class="menu_item"><a href="#greet">自己紹介</a></li>
                 <li class="menu_item"><a href="#">制作物</a></li>
                 <li class="menu_item"><a href="#">BLOG</a></li>
@@ -21,15 +21,16 @@
     </div>
     <div class="stopwatch" id="stopwatch">
         <Script type="text/javascript" src ="stopwatch.js">
-            
         </Script>   
+        <button align="center">+</button>
+        <br/>
         <table border=2 align="center">
             <thead>
                 <tr>add new stopwatch</tr>
             </thead>
             <tbody>
                 <tr>
-                    <th>hours</th>
+                    <th>hour</th>
                     <th>min</th>
                     <th>sec</th>
                     <th>milli sec</th>
@@ -41,10 +42,18 @@
                     <td><button type="button" name="ms+" value="ms+">+</button></td>
                 </tr>
                 <tr>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
+                    <td>
+                        <input type="text" name="hour" value="00" size="2" maxlength="2" pattern="/d{2}">
+                    </td>
+                    <td>
+                        <input type="text" name="min" value="00" size="2" maxlength="2" pttern="/d{2}">
+                    </td>
+                    <td>
+                        <input type="text" name="sec" value="00" size="2" maxlength="2" pattern="/d{2}">
+                    </td>
+                    <td>
+                        <input type="text" name="milli_sec" value="00" size="2" maxlength="2" pattern="/d{2}">
+                    </td>
                 </tr>
                 <tr align="center">
                     <td><button type="button" name="h-" value="h-">-</button></td>

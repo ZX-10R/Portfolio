@@ -5,7 +5,6 @@ function loadFunction(){
 
     var time = new Date();
     var now = time.toTimeString ();
-    window.alert(now);
+    console.log(now);
+
 }
-
-
