@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>NopolarBearのサイト</title>
     <meta name="description" content="Portfolio">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
     <div class="header">
@@ -20,7 +20,41 @@
         </nav>
     </div>
     <div class="stopwatch" id="stopwatch">
-        
-    </div>  
+        <Script type="text/javascript" src ="stopwatch.js">
+            
+        </Script>   
+        <table border=2 align="center">
+            <thead>
+                <tr>add new stopwatch</tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>hours</th>
+                    <th>min</th>
+                    <th>sec</th>
+                    <th>milli sec</th>
+                </tr>
+                <tr align="center">
+                    <td><button type="button" name="h+" value="h+">+</button></td>
+                    <td><button type="button" name="m+" value="m+">+</button></td>
+                    <td><button type="button" name="s+" value="s+">+</button></td>
+                    <td><button type="button" name="ms+" value="ms+">+</button></td>
+                </tr>
+                <tr>
+                    <td>dummy</td>
+                    <td>dummy</td>
+                    <td>dummy</td>
+                    <td>dummy</td>
+                </tr>
+                <tr align="center">
+                    <td><button type="button" name="h-" value="h-">-</button></td>
+                    <td><button type="button" name="m-" value="m-">-</button></td>
+                    <td><button type="button" name="s-" value="s-">-</button></td>
+                    <td><button type="button" name="ms-" value="ms-">-</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+</div>  
 </body>
 </html>

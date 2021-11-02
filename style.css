@@ -49,3 +49,14 @@ h1 {
 .blog{
     height:400px;
 }
+.stopwatch{
+    padding-top:150;
+    text-align:center;
+}
+
+table.stopwatch{
+    padding-top:150px;
+}
+td.stopwatch{
+    text-align:center;
+}
