@@ -1,30 +1,37 @@
 'use strict';
 window.onload = function(){
     
-    let milisec = 0;
-    let sec = 0;
-    let min = 0;
-    let hour = 0;
-    var timer_face = document.getElementById("timer_face");
-    var start = document.getElementById("btn_start");
-    var stop = document.getElementById("btn_stop");
-    var reset = document.getElementById("btn_reset");
+    // let milisec = 0;
+    // let sec = 0;
+    // let min = 0;
+    // let hour = 0;
+    let timeDelta = 0;
+    let timeNow = 0;
+    let keepTime = 0;
+    let timer_face = document.getElementById("timer_face");
+    let start = document.getElementById("btn_start");
+    let stop = document.getElementById("btn_stop");
+    let reset = document.getElementById("btn_reset");
+    let interval;
     function displayFunction(time){
-        Number(time);
-        console.log(typeof(time));
-        var timeDelta = Date.now() - time;
-        timer_face.textContent = timeDelta;
+        console.log(time);
+        timeDelta = new Date();
+        timer_face.textContent = timeDelta.getTime() - time;
     }
     // start押されたとき
     start.onclick = function(){
-        var timeNow = Date.now();
-        console.log(typeof(timeNow));
-        setInterval(function(){displayFunction(timeNow)}, 1000); 
+        timeNow = new Date();
+        console.log(typeof(timeNow.getTime()));
+        console.log(timeNow.getTime());
+        interval = setInterval(function(){displayFunction(timeNow.getTime())}, 0.1); 
     }
     // stop
     stop.onclick= function(){
-        var timeStop = Date.now();
-        console.log(timeStop);
+        let timeStop = new Date();
+        console.log(timeStop.getTime());
+        clearInterval(interval);
+        keepTime = timeNow.getTime() - timeStop.getTime();
+        timer_face.textContent = keepTime;
     }
     // reset
     reset.onclick = function(){
