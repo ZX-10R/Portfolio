@@ -1,6 +1,6 @@
 'use strict';
 window.onload = function(){
-    
+    let time =0;
     let milisec= 0;
     let sec = 0;
     let min = 0;
@@ -13,52 +13,54 @@ window.onload = function(){
     let start = document.getElementById("btn_start");
     let stop = document.getElementById("btn_stop");
     let reset = document.getElementById("btn_reset");
-    // function timeConvert(time){
-    //     hour = Math.floor(time / 60 * 60 * 1000);
-    //     min =  Math.floor(time / 60 * 1000) ;
-    //     sec =  Math.floor(time / 1000) ;
-    //     milisec = time.slice(-3);
-    //     console.log(hour);
-    //     console.log(min);
-    //     console.log(sec);
-    //     console.log(milisec);
-    //     timer_face.textContent = hour + ":" + min + ":" + sec + ":" + milisec;
-    // }
+    reset.disabled = true;
+
+    function timeConvert(time){
+        hour = Math.floor(time / 3600000);
+        min =  Math.floor(time / 60000);
+        sec =  Math.floor(time % 60000 / 1000);
+        milisec = Math.floor(time % 1000);
+        
+        hour = ("00" + hour).slice(-2);
+        min = ("00" + min).slice(-2);
+        sec = ("00" + sec).slice(-2);
+        milisec = ("00" + milisec).slice(-3);
+
+        return hour + ":" + min + ":" + sec + ":" + milisec;
+    }
 
     function displayFunction(){
-        console.log(timeNow); 
         timeDelta = Date.now();
-        timer_face.textContent = timeDelta - timeNow + keepTime;
+        timer_face.textContent = timeConvert(timeDelta - timeNow + keepTime);
     }
 
     // start押されたとき
     start.onclick = function(){
+        stop.disabled = false;
         timeNow = Date.now();
-        console.log(typeof(timeNow));
-        console.log(timeNow);
-        interval = setInterval(displayFunction, 1); 
+        interval = setInterval(displayFunction, 1);
+        start.disabled = true;
     };
 
     // stop
     stop.onclick= function(){
+        stop.disabled = true;
         let timeStop = Date.now();
-        console.log(timeStop);
         clearInterval(interval);
-        keepTime = timeStop - timeNow;
-        timer_face.textContent = keepTime;
-
+        keepTime = timeStop + keepTime - timeNow;
+        timer_face.textContent = timeConvert(keepTime);
+        start.disabled = false;
+        reset.disabled = false;
     }
 
     // reset
     reset.onclick = function(){
         var timeDelta = 0;
         keepTime = 0;
-        timer_face.textContent = keepTime;
+        clearInterval(interval);
+        timer_face.textContent = timeConvert(keepTime);
+        reset.disabled = true;
     }
-    console.log(timer_face);
-    console.log(start);
-    console.log(stop);
-    console.log(reset);
 } 
 
 
