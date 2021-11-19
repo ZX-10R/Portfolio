@@ -60,6 +60,8 @@ window.onload = function(){
         clearInterval(interval);
         timer_face.textContent = timeConvert(keepTime);
         reset.disabled = true;
+        start.disabled = false;
+        stop.disabled = true;
     }
 } 
 
