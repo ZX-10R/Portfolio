@@ -1,5 +1,5 @@
 <DOCTYPE html>
-<html lang ="en">
+<html lang ="ja">
 <head>
     <meta charset="utf-8">
     <title>NopolarBearのサイト</title>
@@ -15,55 +15,18 @@
                 <li class="menu_item"><a href="#greet">自己紹介</a></li>
                 <li class="menu_item"><a href="#">制作物</a></li>
                 <li class="menu_item"><a href="#">BLOG</a></li>
-                <li class="menu_item"><a href="#">リンク </a></li>
+                <li class="menu_item"><a href="#">リンク</a></li>
             </ul>
         </nav>
     </div>
     <div class="stopwatch" id="stopwatch">
         <Script type="text/javascript" src ="stopwatch.js">
         </Script>   
-        <button align="center">+</button>
-        <br/>
-        <table border=2 align="center">
-            <thead>
-                <tr>add new stopwatch</tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>hour</th>
-                    <th>min</th>
-                    <th>sec</th>
-                    <th>milli sec</th>
-                </tr>
-                <tr align="center">
-                    <td><button type="button" name="h+" value="h+">+</button></td>
-                    <td><button type="button" name="m+" value="m+">+</button></td>
-                    <td><button type="button" name="s+" value="s+">+</button></td>
-                    <td><button type="button" name="ms+" value="ms+">+</button></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" name="hour" value="00" size="2" maxlength="2" pattern="^([01][0-9]|2[0-3])" max="24" min="00">
-                    </td>
-                    <td>
-                        <input type="text" name="min" value="00" size="2" maxlength="2" pttern="[0-5][0-9]" max="59" min="00">
-                    </td>
-                    <td>
-                        <input type="text" name="sec" value="00" size="2" maxlength="2" pattern="[0-5][0-9]" max="59" min="00">
-                    </td>
-                    <td>
-                        <input type="text" name="milli_sec" value="00" size="2" maxlength="2" pattern="[0-9][0-9]" max="99" min="00">
-                    </td>
-                </tr>
-                <tr align="center">
-                    <td><button type="button" name="h-" value="h-">-</button></td>
-                    <td><button type="button" name="m-" value="m-">-</button></td>
-                    <td><button type="button" name="s-" value="s-">-</button></td>
-                    <td><button type="button" name="ms-" value="ms-">-</button></td>
-                </tr>
-            </tbody>
-        </table>
-
-</div>  
+        <div id="timer_face">00:00:00:000</div>
+        <br>
+        <button type="button" id="btn_start">start</button>
+        <button type="button" id="btn_stop">stop</button>
+        <button type="button" id="btn_reset">reset</button>
+    </div>  
 </body>
 </html>
