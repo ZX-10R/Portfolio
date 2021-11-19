@@ -1,0 +1,36 @@
+.stopwatch{
+	margin-left:20%;
+	margin-right:20%;
+}
+#timer_face{
+    font-weight:700;
+	font-size:64px;
+}
+
+.stopwatch button{
+	border-radius:4px;
+	position:relative;
+	font-family:inherit;
+	font-size:32px;
+	width:20%;
+	font-weight:700;
+    line-height:1.3;
+    background-color:#EEE;
+    border:outset;
+    border-bottom:4px solid #CCC;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, .1);
+}
+.stopwatch button:hover{
+    border-bottom:3px solid #CCC;
+    transform:translateY(1px);
+}
+.stopwatch button:active{
+	transform:translateY(2px);
+	border-bottom:1px solid #CCC;
+}
+.stopwatch button:disabled{
+	pointer-events:none;
+	border:3px inset;
+	color:#BBB;
+	background-color:#AAA;
+}

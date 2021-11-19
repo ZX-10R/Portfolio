@@ -14,6 +14,7 @@ window.onload = function(){
     let stop = document.getElementById("btn_stop");
     let reset = document.getElementById("btn_reset");
     reset.disabled = true;
+    stop.disabled = true;
 
     function timeConvert(time){
         hour = Math.floor(time / 3600000);
