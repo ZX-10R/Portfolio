@@ -1,6 +1,5 @@
 'use strict';
 window.onload = function(){
-    let time =0;
     let milisec= 0;
     let sec = 0;
     let min = 0;
@@ -34,37 +33,67 @@ window.onload = function(){
         timeDelta = Date.now();
         timer_face.textContent = timeConvert(timeDelta - timeNow + keepTime);
     }
+    if (window.matchMedia('(min-width: 600px)').matches) {
+        // start押されたとき
+        start.onclick = function(){
+            stop.disabled = false;
+            timeNow = Date.now();
+            interval = setInterval(displayFunction, 1);
+            start.disabled = true;
+            reset.disabled = true;
+        };
 
-    // start押されたとき
-    start.onclick = function(){
-        stop.disabled = false;
-        timeNow = Date.now();
-        interval = setInterval(displayFunction, 1);
-        start.disabled = true;
-    };
+        // stop
+        stop.onclick= function(){
+            stop.disabled = true;
+            let timeStop = Date.now();
+            clearInterval(interval);
+            keepTime = timeStop + keepTime - timeNow;
+            timer_face.textContent = timeConvert(keepTime);
+            start.disabled = false;
+            reset.disabled = false;
+        }
+    }
+    else if (window.matchMedia('(max-width:600px)').matches) {
+        stop.remove();
+        let flag = true;
+        start.onclick = function(){
+            if (flag){  //start
+                flag = false;
+                start.textContent = "stop";
+                timeNow = Date.now();
+                interval = setInterval(displayFunction, 1);
+                console.log(flag);
+                reset.disabled = true;
+            }
 
-    // stop
-    stop.onclick= function(){
-        stop.disabled = true;
-        let timeStop = Date.now();
-        clearInterval(interval);
-        keepTime = timeStop + keepTime - timeNow;
-        timer_face.textContent = timeConvert(keepTime);
-        start.disabled = false;
-        reset.disabled = false;
+            else{ //stop
+                flag = true;
+                start.textContent = "start";
+                let timeStop = Date.now();
+                clearInterval(interval);
+                keepTime = timeStop + keepTime - timeNow;
+                timer_face.textContent = timeConvert(keepTime);
+                reset.disabled = false;
+                console.log(flag);
+            }
+        }
     }
 
     // reset
     reset.onclick = function(){
-        var timeDelta = 0;
+        timeDelta = 0;
         keepTime = 0;
-        clearInterval(interval);
         timer_face.textContent = timeConvert(keepTime);
         reset.disabled = true;
         start.disabled = false;
         stop.disabled = true;
     }
 } 
+
+
+    
+
 
 
 // setInterval(関数function, 一定時間の指定)

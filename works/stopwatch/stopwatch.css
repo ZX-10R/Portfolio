@@ -20,6 +20,7 @@
     border-bottom:4px solid #CCC;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, .1);
 }
+
 .stopwatch button:hover{
     border-bottom:3px solid #CCC;
     transform:translateY(1px);
@@ -33,4 +34,36 @@
 	border:3px inset;
 	color:#BBB;
 	background-color:#AAA;
+}
+
+@media screen and (max-width:600px) {
+ 
+	/*　画面ワイズが600px以下*/
+	
+	#timer_face{
+		font-weight:700;
+		font-size:32px;
+	}
+
+    .stopwatch button{
+		position:relative;
+		font-family:inherit;
+		font-size:16px;
+		font-weight:700;
+		line-height:1.3;
+		background-color:#EEE;
+		border:outset;
+        display:block;
+		text-align:center;
+	}
+		
+	#btn_start{
+		height:120px;
+		width:120px;
+		border-radius:60px;
+        position:absolute;
+		bottom:60px;
+		
+	}
+
 }
