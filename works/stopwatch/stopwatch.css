@@ -39,14 +39,18 @@
 @media screen and (max-width:600px) {
  
 	/*　画面ワイズが600px以下*/
+	.stopwatch{
+		margin:auto;
+		text-align:center;
+	}
 	
 	#timer_face{
 		font-weight:700;
 		font-size:32px;
+		margin-bottom:60%;
 	}
 
     .stopwatch button{
-		position:relative;
 		font-family:inherit;
 		font-size:16px;
 		font-weight:700;
@@ -54,16 +58,20 @@
 		background-color:#EEE;
 		border:outset;
         display:block;
-		text-align:center;
+		margin:auto;
 	}
-		
+	
 	#btn_start{
+		margin-bottom:10%;
 		height:120px;
 		width:120px;
 		border-radius:60px;
-        position:absolute;
-		bottom:60px;
-		
 	}
-
+	
+	#btn_reset{
+		position:relative;
+		bottom:0px;
+		right:0px;
+        margin-bottom:1%;
+	}
 }
