@@ -1,6 +1,11 @@
+body{
+    background-image:url(./img/tile3.png);
+	background-repeat:repeat;
+}
 .stopwatch{
 	margin-left:20%;
 	margin-right:20%;
+
 }
 #timer_face{
     font-weight:700;
@@ -62,7 +67,8 @@
 	}
 	
 	#btn_start{
-		margin-bottom:10%;
+		position:relative;
+		/* margin-bottom: */
 		height:120px;
 		width:120px;
 		border-radius:60px;
@@ -70,8 +76,7 @@
 	
 	#btn_reset{
 		position:relative;
-		bottom:0px;
+		bottom:5%;
 		right:0px;
-        margin-bottom:1%;
 	}
 }
